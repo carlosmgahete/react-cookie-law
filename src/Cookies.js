@@ -20,6 +20,7 @@ export default class Cookies {
   }
 
   remove(cookie) {
-    return this.cookies.remove(cookie);
+    const optionPath = this.whole_domain ? { path: '/' } : {};
+    return this.cookies.remove(cookie, optionPath);
   }
 }
